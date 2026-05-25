@@ -29,8 +29,26 @@ function App() {
       <div className="grid">
         {albums.map((album) => (
           <div key={album.id} className="card">
+            
+            <img
+              src={album.coverUrl}
+              alt={album.title}
+              className="cover"
+            />
+
             <h3 className="album-title">{album.title}</h3>
             <p className="year">{album.year}</p>
+
+            {album.spotifyUrl && (
+              <a
+                href={album.spotifyUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="spotify"
+              >
+                Open on Spotify
+              </a>
+            )}
           </div>
         ))}
       </div>

@@ -32,7 +32,7 @@ model Album {
   title     String
   year      Int
   coverUrl  String
-  
+  spotifyUrl String
   artistId  Int
   artist    Artist   @relation(fields: [artistId], references: [id])
 
