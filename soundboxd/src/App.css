@@ -11,16 +11,35 @@ body {
 
 .title {
   font-size: 34px;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
   font-weight: bold;
 }
 
 .loading {
   text-align: center;
   margin-top: 80px;
-  font-size: 20px;
   color: #aaa;
 }
+
+/* SEARCH */
+
+.search {
+  width: 100%;
+  max-width: 400px;
+  padding: 12px;
+  margin-bottom: 25px;
+  border: none;
+  border-radius: 10px;
+  background-color: #1b1b1b;
+  color: white;
+  font-size: 15px;
+}
+
+.search:focus {
+  outline: 2px solid #1db954;
+}
+
+/* GRID */
 
 .grid {
   display: grid;
@@ -28,41 +47,48 @@ body {
   gap: 20px;
 }
 
+/* CARD */
+
 .card {
   background-color: #1b1b1b;
   border-radius: 14px;
   padding: 12px;
   transition: 0.25s ease;
-  cursor: pointer;
 }
 
 .card:hover {
-  transform: scale(1.05);
+  transform: scale(1.04);
   background-color: #252525;
 }
 
+/* COVER */
+
 .cover {
   width: 100%;
-  border-radius: 10px;
-  margin-bottom: 10px;
   aspect-ratio: 1 / 1;
   object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
 }
+
+/* TEXT */
 
 .album-title {
   font-size: 15px;
-  margin: 5px 0;
+  margin: 6px 0;
 }
 
 .year {
   color: gray;
-  margin: 0;
   font-size: 13px;
+  margin: 0;
 }
+
+/* SPOTIFY */
 
 .spotify {
   display: inline-block;
-  margin-top: 8px;
+  margin-top: 10px;
   color: #1db954;
   text-decoration: none;
   font-size: 13px;

@@ -4,6 +4,7 @@ import "./App.css";
 function App() {
   const [albums, setAlbums] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
     fetch("http://localhost:5000/albums")
@@ -18,6 +19,10 @@ function App() {
       });
   }, []);
 
+  const filteredAlbums = albums.filter((album) =>
+    album.title.toLowerCase().includes(search.toLowerCase())
+  );
+
   if (loading) {
     return <h2 className="loading">Loading albums...</h2>;
   }
@@ -26,10 +31,17 @@ function App() {
     <div className="container">
       <h1 className="title">Soundboxd</h1>
 
+      <input
+        type="text"
+        placeholder="Search albums..."
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+        className="search"
+      />
+
       <div className="grid">
-        {albums.map((album) => (
+        {filteredAlbums.map((album) => (
           <div key={album.id} className="card">
-            
             <img
               src={album.coverUrl}
               alt={album.title}
@@ -37,6 +49,7 @@ function App() {
             />
 
             <h3 className="album-title">{album.title}</h3>
+
             <p className="year">{album.year}</p>
 
             {album.spotifyUrl && (
